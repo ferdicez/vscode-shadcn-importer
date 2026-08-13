@@ -4,6 +4,10 @@
   "description": "Importa componentes do shadcn/ui direto pro projeto, sem sair do VS Code.",
   "version": "0.1.0",
   "publisher": "ferdicez",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferdicez/vscode-shadcn-importer"
+  },
   "engines": {
     "vscode": "^1.90.0"
   },

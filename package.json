@@ -1,0 +1,62 @@
+{
+  "name": "shadcn-importer",
+  "displayName": "shadcn/ui Importer",
+  "description": "Importa componentes do shadcn/ui direto pro projeto, sem sair do VS Code.",
+  "version": "0.1.0",
+  "publisher": "ferdicez",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "shadcnImporter.addComponent",
+        "title": "Shadcn: Add Component"
+      },
+      {
+        "command": "shadcnImporter.openPanel",
+        "title": "Shadcn: Open Component Browser"
+      },
+      {
+        "command": "shadcnImporter.quickMenu",
+        "title": "Shadcn: Quick Menu"
+      }
+    ],
+    "configuration": {
+      "title": "shadcn/ui Importer",
+      "properties": {
+        "shadcnImporter.showcasePath": {
+          "type": "string",
+          "default": "components/showcase",
+          "description": "Pasta onde o arquivo de vitrine (exemplo de uso) do componente é criado."
+        },
+        "shadcnImporter.autoShowcase": {
+          "type": "string",
+          "enum": [
+            "ask",
+            "always",
+            "never"
+          ],
+          "default": "ask",
+          "description": "O que fazer depois de instalar um componente: perguntar, sempre criar a vitrine, ou nunca criar."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "watch": "node esbuild.config.mjs --watch",
+    "vscode:prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.90.0",
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.0"
+  }
+}
